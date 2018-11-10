@@ -43,7 +43,7 @@ import "github.com/klaasjacobdevries/kgul/runtime/logging"
 
 func doLogging() {
   l := logging.New("logger.C")
-	l.SetLevel(logging.Debug) // enable logging at debug level
+  l.SetLevel(logging.Debug) // enable logging at debug level
   l.Debug("Different")
   l.Info("Loglevels")
   l.Warning("Can be")
