@@ -80,3 +80,46 @@ func TestMyExpect(t *testing.T) {
 ```
 
 Other  expectations supported include `Fail()` (non-conditional, based on flow control), `IsNil()` and `IsNotNil()`, `AlmostEqual()` and `AlmostNotEqual()` (for floating-point comparisons),  `Less()`, `LessEqual()`, `Greater()` and `GreaterEqual()`, `Panics()`, `Regex()` for string matching and a generic `That()` to match for a custom matcher (c.f. Mock)
+
+## Mock
+
+Mocking library to accompany expects. This is in the style of C++ gmock, though admittingly in the more dynamic language that Go is it is a less attractive tradeof between usefulness and complexity. Often a simple hand-written stub is the better option.
+
+This allows you to write tests like this:
+
+```go
+import (
+	"github.com/klaasjacobdevries/kgul/testing/expects"
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
+)
+
+func TestMyMock(t *testing.T) {
+	expect := expects.New(t)
+	mock := New(t)
+
+	// track a side effect
+	called := 0
+	sideEffect := func(int, int) {
+		called++
+	}
+
+	var fn func(int, int) int
+	mock.Wrap(&fn).           // wrap an existing function in a mock ...
+		Expect(2, NotNil()).    // expect to be called with arguments 2 and any non-nil argument ...
+		Times(NewAtMost(2)).    // either 0, 1 or 2 times ...
+		SideEffect(sideEffect). // when we do, perform the side effect ...
+		Returns(4)              // and return 4
+
+	expect.Equals(4, fn(2, 3)) // matches
+	expect.Equals(4, fn(2, 4)) // matches
+	expect.Equals(0, fn(4, 5)) // does not match
+
+	expect.Equals(2, called) // 2 of the above matched
+
+	mock.Verify() // verification succeeds
+
+	expect.Equals(4, fn(2, 5)) // call again
+
+	mock.Verify() // verification failes, the AtMost(2) condition does not hold
+}
+```
