@@ -1,8 +1,9 @@
 package mock
 
 import (
-	"kdv/testing/expects"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/expects"
 )
 
 type invoker interface {

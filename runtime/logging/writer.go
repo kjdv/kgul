@@ -3,9 +3,10 @@ package logging
 import (
 	"fmt"
 	"io"
-	"kdv/runtime/assert"
 	"os"
 	"time"
+
+	"github.com/klaasjacobdevries/kgul/runtime/assert"
 )
 
 var logWriter io.Writer = os.Stdout

@@ -2,9 +2,10 @@ package mock
 
 import (
 	"fmt"
-	"kdv/testing/metatest"
 	"reflect"
 	"runtime"
+
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
 )
 
 func callpoint() string {

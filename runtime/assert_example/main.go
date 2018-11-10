@@ -1,6 +1,6 @@
 package main
 
-import "kdv/runtime/assert"
+import "github.com/klaasjacobdevries/kgul/runtime/assert"
 
 func main() {
 	// assert.Assert(false)

@@ -2,7 +2,8 @@ package main
 
 import (
 	"flag"
-	"kdv/runtime/logging"
+
+	"github.com/klaasjacobdevries/kgul/runtime/logging"
 )
 
 func init() {

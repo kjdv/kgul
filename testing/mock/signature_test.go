@@ -1,8 +1,9 @@
 package mock
 
 import (
-	"kdv/testing/expects"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/expects"
 )
 
 func TestValueConversion(t *testing.T) {

@@ -2,9 +2,10 @@ package assert
 
 import (
 	"fmt"
-	"kdv/testing/expects"
 	"strings"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/expects"
 )
 
 func TestAssert(t *testing.T) {

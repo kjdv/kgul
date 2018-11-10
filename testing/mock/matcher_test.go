@@ -2,8 +2,9 @@ package mock
 
 import (
 	"fmt"
-	"kdv/testing/expects"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/expects"
 )
 
 func doMatch(m Matcher, v interface{}) bool {

@@ -1,8 +1,9 @@
 package expects
 
 import (
-	"kdv/testing/metatest"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
 )
 
 func TestExpect_True(t *testing.T) {

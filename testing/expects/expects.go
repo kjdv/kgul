@@ -2,8 +2,9 @@ package expects
 
 import (
 	"fmt"
-	"kdv/testing/metatest"
 	"runtime"
+
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
 )
 
 func callpoint() string {

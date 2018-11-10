@@ -1,9 +1,10 @@
 package mock
 
 import (
-	"kdv/testing/expects"
-	"kdv/testing/metatest"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/expects"
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
 )
 
 func TestMockedFunction_NumberOfCalls(t *testing.T) {

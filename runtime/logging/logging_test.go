@@ -2,8 +2,9 @@ package logging
 
 import (
 	"bytes"
-	"kdv/testing/expects"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/expects"
 )
 
 type testBuffer struct {

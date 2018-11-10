@@ -2,8 +2,9 @@ package expects
 
 import (
 	"fmt"
-	"kdv/testing/metatest"
 	"testing"
+
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
 )
 
 type comparisonCase struct {

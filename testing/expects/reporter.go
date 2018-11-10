@@ -2,7 +2,8 @@ package expects
 
 import (
 	"fmt"
-	"kdv/testing/metatest"
+
+	"github.com/klaasjacobdevries/kgul/testing/metatest"
 )
 
 func makeBody(msg ...interface{}) string {
