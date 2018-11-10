@@ -69,8 +69,8 @@ func TestMyExpect(t *testing.T) {
 	expect.True(2+2 == 5) // prints a friendly error message plus the file and line number of the failure
 	expect.Equals(5, 2+2) // prints
 	//  expected != actual
-	//  expected: (struct { a string }) {a:foo}
-	//  actual:   (struct { a string }) {a:bar}
+	//  expected: (int) 5
+	//  actual:   (int) 4
 
 	expect.Equals(struct{ a string }{"foo"}, struct{ a string }{"bar"} // complex structures supported, this fails with:
 	//  expected != actual
