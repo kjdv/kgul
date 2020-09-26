@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/klaasjacobdevries/kgul/testing/expects"
+	"github.com/kjdv/kgul/testing/expects"
 )
 
 func TestAssert(t *testing.T) {

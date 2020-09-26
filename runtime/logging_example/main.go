@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/klaasjacobdevries/kgul/runtime/logging"
+	"github.com/kjdv/kgul/runtime/logging"
 )
 
 func init() {

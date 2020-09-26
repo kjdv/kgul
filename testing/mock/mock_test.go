@@ -3,8 +3,8 @@ package mock
 import (
 	"testing"
 
-	"github.com/klaasjacobdevries/kgul/testing/expects"
-	"github.com/klaasjacobdevries/kgul/testing/metatest"
+	"github.com/kjdv/kgul/testing/expects"
+	"github.com/kjdv/kgul/testing/metatest"
 )
 
 func someFunc(callback func(int) int, arg int) int {

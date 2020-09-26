@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/klaasjacobdevries/kgul/testing/metatest"
+	"github.com/kjdv/kgul/testing/metatest"
 )
 
 func callpoint() string {

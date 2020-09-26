@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/klaasjacobdevries/kgul/testing/expects"
+	"github.com/kjdv/kgul/testing/expects"
 )
 
 func doMatch(m Matcher, v interface{}) bool {

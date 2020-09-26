@@ -1,7 +1,7 @@
 package mock
 
 import (
-	"github.com/klaasjacobdevries/kgul/testing/metatest"
+	"github.com/kjdv/kgul/testing/metatest"
 )
 
 type Mock struct {

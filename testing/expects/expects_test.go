@@ -3,7 +3,7 @@ package expects
 import (
 	"testing"
 
-	"github.com/klaasjacobdevries/kgul/testing/metatest"
+	"github.com/kjdv/kgul/testing/metatest"
 )
 
 func shouldSucceed(mt *metatest.Metatest, t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/klaasjacobdevries/kgul/testing/expects"
+	"github.com/kjdv/kgul/testing/expects"
 )
 
 type testBuffer struct {

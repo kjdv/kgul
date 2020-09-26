@@ -3,7 +3,7 @@ package expects
 import (
 	"fmt"
 
-	"github.com/klaasjacobdevries/kgul/testing/metatest"
+	"github.com/kjdv/kgul/testing/metatest"
 )
 
 func makeBody(msg ...interface{}) string {

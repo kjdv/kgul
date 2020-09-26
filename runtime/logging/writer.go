@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/klaasjacobdevries/kgul/runtime/assert"
+	"github.com/kjdv/kgul/runtime/assert"
 )
 
 var logWriter io.Writer = os.Stdout

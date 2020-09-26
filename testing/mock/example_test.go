@@ -3,7 +3,7 @@ package mock
 import (
 	"testing"
 
-	"github.com/klaasjacobdevries/kgul/testing/expects"
+	"github.com/kjdv/kgul/testing/expects"
 )
 
 type invoker interface {

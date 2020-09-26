@@ -1,6 +1,6 @@
 package main
 
-import "github.com/klaasjacobdevries/kgul/runtime/assert"
+import "github.com/kjdv/kgul/runtime/assert"
 
 func main() {
 	// assert.Assert(false)

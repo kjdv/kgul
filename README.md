@@ -8,7 +8,7 @@ A small set of assorted utilities to help with other Go projects.
 Makes it possible to use assertions, for example:
 
 ```go
-import "github.com/klaasjacobdevries/kgul/runtime/assert"
+import "github.com/kjdv/kgul/runtime/assert"
 
 func divide(a, b int) int {
 	assert.Assert(b != 0, "Can not divide by zero")
@@ -21,7 +21,7 @@ This also comes in flavours, there is an `Assertf()` for formatted assertion mes
 Default behaviour is to print the message and a stack trace to stderr and exit the process with a non-zero exit code. By calling `OnAssert()` a different failure handler can be installed:
 
 ```go
-import "github.com/klaasjacobdevries/kgul/runtime/assert"
+import "github.com/kjdv/kgul/runtime/assert"
 
 func setPanicHandler() {
   assert.OnAssert(assert.PanicHandler) // the provided PanicHandler panics instead of exiting
@@ -39,7 +39,7 @@ func setNoopHandler() {
 A slightly more configurable logger than the standard one. You can log by creating loggers:
 
 ```go
-import "github.com/klaasjacobdevries/kgul/runtime/logging"
+import "github.com/kjdv/kgul/runtime/logging"
 
 func doLogging() {
   l := logging.New("logger.C")
@@ -61,7 +61,7 @@ The built-in unit testing functionality for Go is nice, but very very spartan. T
 
 ```go
 
-import "github.com/klaasjacobdevries/kgul/testing/expects"
+import "github.com/kjdv/kgul/testing/expects"
 
 func TestMyExpect(t *testing.T) {
 	expect := expects.New(t)
@@ -89,8 +89,8 @@ This allows you to write tests like this:
 
 ```go
 import (
-	"github.com/klaasjacobdevries/kgul/testing/expects"
-	"github.com/klaasjacobdevries/kgul/testing/metatest"
+	"github.com/kjdv/kgul/testing/expects"
+	"github.com/kjdv/kgul/testing/metatest"
 )
 
 func TestMyMock(t *testing.T) {
