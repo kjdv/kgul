@@ -65,7 +65,7 @@ func (f *logFile) Set(value string) error {
 }
 
 func init() {
-	var dummyFile logFile = "stderr"
+	var dummyFile logFile = "stdout"
 
 	flag.Var((*logLevelT)(&logLevel), "logLevel", "global log level")
 	flag.Var(&dummyFile, "logFile", "file to write logs to")
