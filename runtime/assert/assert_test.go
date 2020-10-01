@@ -1,6 +1,7 @@
 package assert
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 	"testing"
@@ -81,6 +82,43 @@ func TestFailf(t *testing.T) {
 
 	Failf("with argument %d", 3)
 	expect.Equals("with argument 3", message)
+}
+
+func TestNotErr(t *testing.T) {
+	expect := expects.New(t)
+
+	message := "never called"
+	OnAssert(func(f Failure) {
+		message = f.message
+	})
+
+	NotErr(nil)
+	expect.Equals("never called", message)
+
+	NotErr(errors.New("bad stuff"))
+	expect.Equals("bad stuff", message)
+
+	NotErr(errors.New("bad stuff"), ": custom message")
+	expect.Equals("bad stuff: custom message", message)
+
+}
+
+func TestNotErrf(t *testing.T) {
+	expect := expects.New(t)
+
+	message := "never called"
+	OnAssert(func(f Failure) {
+		message = f.message
+	})
+
+	NotErrf(nil, "msg")
+	expect.Equals("never called", message)
+
+	NotErrf(errors.New("bad stuff"), "some message: %s")
+	expect.Equals("some message: bad stuff", message)
+
+	NotErrf(errors.New("bad stuff"), "%s: with argument %d", 3)
+	expect.Equals("bad stuff: with argument 3", message)
 }
 
 func TestPanicHandler(t *testing.T) {

@@ -25,7 +25,7 @@ func PanicHandler(f Failure) {
 }
 
 // Allow a custom function to be set to actually deal with assertion failures
-// Default prints the message to stderr and exists
+// Default prints the message to stderr and exits
 var assertHandler func(Failure) = DieHandler
 
 func OnAssert(handler func(Failure)) {
@@ -69,4 +69,12 @@ func Fail(msg ...interface{}) {
 func Failf(format string, items ...interface{}) {
 	f := Failure{formatf(format, items...), debug.Stack()}
 	assertHandler(f)
+}
+
+func NotErr(err error, msg ...interface{}) {
+	Assert(err == nil, append([]interface{}{err}, msg...)...)
+}
+
+func NotErrf(err error, format string, items ...interface{}) {
+	Assertf(err == nil, format, append([]interface{}{err}, items...)...)
 }
